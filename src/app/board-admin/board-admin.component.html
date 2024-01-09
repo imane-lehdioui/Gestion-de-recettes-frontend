@@ -1,0 +1,27 @@
+<div class="container">
+  <header class="jumbotron">
+
+<h2> User List</h2>
+<table class = "table table-striped">
+    <thead>
+        <tr>
+            <th> Username</th>
+            <th> Email </th>
+            <th> Password </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let user of user" >
+            <td> {{ user.username }} </td>
+            <td> {{ user.email }} </td>
+            <td> {{ user.password }} </td>
+            <td>
+                <button (click) = "updateUser(user.id)"  class = "btn btn-info"> Update</button>
+                <button (click) = "deleteUser(user.id)"  class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+                <button class = "btn btn-info" style="margin-left: 10px"> Details</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</header>
+</div>

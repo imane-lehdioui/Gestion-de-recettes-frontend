@@ -1,0 +1,46 @@
+<section class="apropos" id="apropos">
+  <div class="row">
+      <div class="col50">
+        <strong class="titre-texte"><span>Titre</span> {{offre.titre}}</strong>
+        <p> {{offre.description}}.</p>
+        <strong class="titre-texte"><span>Les ingrédients</span> </strong>
+        <p> - {{offre.ingredients}} .</p>
+
+        <strong class="titre-texte"><span>Catégorie</span> </strong>
+        <p> - {{offre.categorie}} .</p>
+
+      
+        
+        <strong class="titre-texte"><span>Préparation</span> </strong>
+        <i><p> ETAPE N°1 : {{offre.preparation}} </p></i>
+
+        
+       
+
+      </div>
+      <div class="col50">
+          <div class="img">
+              <img src="{{this.host+'/api/test/Imgarticles/'+offre.id}}" alt="image">
+          </div>
+          <td>
+            <button (click)="addFavoris()"class = "btn2"> Ajouter aux favoris</button>
+          </td>
+          <td>
+            <button (click)="addComment()"style="border: 2px solid #fb911f" class = "btn1"> Évaluer La Recette</button>
+          </td>
+          <p></p>
+          <div >
+            <textarea  [(ngModel)]="form.contenu"  class="test2" placeholder="Tapez votre commantaire"></textarea>
+          </div>
+
+          <div *ngFor="let comment of resultatfinal">
+            <i><p> Commentaire de {{ username }} : {{comment.contenu}} </p></i>
+          </div>
+         
+
+      </div>
+      <!-- <div >
+        <textarea  placeholder="Tapez votre commantaire"></textarea>
+     </div> -->
+  </div>
+</section>

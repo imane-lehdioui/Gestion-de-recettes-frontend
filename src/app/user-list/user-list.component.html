@@ -1,0 +1,26 @@
+
+<p></p>
+<h2> Liste des utilisateurs</h2>
+<table  style="width:110%" class = "table table-striped">
+    <thead>
+        <tr>
+            <th> Username</th>
+            <th> Email </th>
+            <th> Password </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let user of user" >
+            <td> {{ user.username }} </td>
+            <td> {{ user.email }} </td>
+            <td> {{ user.password }} </td>
+            <td>
+                <button (click) = "updateUser(user.id)" class = "btn btn-info"> Update</button><b style="color: aliceblue;"> .</b>
+                <b style="color: aliceblue;"> .</b>
+                <button  (click) = "deleteUser(user.id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button><b style="color: aliceblue;"> .</b>
+                <b style="color: aliceblue;"> .</b>
+                <button (click) = "userDetail(user.id)" class = "btn btn-info"> détail</button></td>
+        </tr>
+    </tbody>
+</table>
+

@@ -1,0 +1,44 @@
+<section class="menu" id="menu">
+
+        <div class="titre">
+           <b><h2 class="titre-texte"><span>Ma  cuisine</span></h2></b> 
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. </p>
+            <p><br></p>
+
+        </div>
+        <div class="contenu1">
+            <label for="categorie">Catégorie :</label>
+            <select id="categorie" [(ngModel)]="selectedCategorie">
+            <option value="dîner">Dîner</option>
+            <option value="déjeuner">Déjeuner</option>
+            <option value="petit-déjeuner">Petit-déjeuner</option>
+            </select>
+            
+            <button class = "btn1" style="border: 2px solid #fb911f" (click)="searchRecettes()">Rechercher</button>
+        </div>
+
+        
+       
+
+        <!-- Afficher les résultats de la recherche -->
+
+        <div class="contenu">
+            <div *ngFor = "let recette of searchResults" class="box">
+                <div class="imbox">
+                    <img src="{{this.host+'/api/test/Imgarticles/'+recette.id}}" alt="">
+                </div>
+               
+                <div class="text">
+                    <h3 >{{recette.titre}}</h3>
+                    <h3 >- {{recette.categorie}}</h3>
+                    <!-- <a  href="/cv" class="btn1">Voir Plus</a> -->
+                    <button style="border: 2px solid #fb911f"(click) = "offreDetail(recette.id)" class = "btn1"> Voir Plus</button>
+
+
+                </div>
+            </div>
+            
+        </div>
+</section>
+
+    

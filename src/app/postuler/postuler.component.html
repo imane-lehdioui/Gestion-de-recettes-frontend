@@ -1,0 +1,43 @@
+<section class="contact" id="contact">
+  <div class="titre noir">
+
+     <strong class="titre-texte"><span>Publier</span>une recette</strong>
+      <p>Que Des Plats Délicieux.</p>
+  </div>
+  
+  <div class="contactform">
+     <strong class="titre-texte"><span>La recette</span></strong>
+      <div class="inputboite">
+          <input [(ngModel)]="form.titre" type="text" placeholder="Titre">
+      </div>
+      <div class="inputboite">
+         <input [(ngModel)]="form.description"  type="text" placeholder="Description">
+      </div>
+      <div class="inputboite">
+         <textarea [(ngModel)]="form.ingredients" placeholder="Les Ingrédients"></textarea>
+      </div>
+      <div class="inputboite">
+         <textarea [(ngModel)]="form.preparation" placeholder="Préparation"></textarea>
+      </div>
+      <div class="inputboite">
+         <input [(ngModel)]="form.categorie" type="text" placeholder="categorie">
+     </div>
+
+     <div class="inputboite">
+      <label>File upload</label>
+      <input type="file" accept="image/*" (change)="onSelectFile($event)">
+      <img [src]="imgURL" height="200" *ngIf="imgURL">
+
+     </div>
+      <!-- <div class="inputboite">
+          <input type="submit" value="envoyer">
+          <button class="inputboite" (click)="creerOffre()" class="btn btn-success">Submit</button>
+      </div> -->
+
+      <div class="text">
+         <button style="border: 2px solid #fb911f" (click)="updateOffre()"class = "btn1"> Enregistrer</button>
+      </div>
+      
+
+  </div>
+</section>
